@@ -32,9 +32,6 @@ const schema = new Schema<IUserModel>({
  */
 schema.method('hashPassword', function hashPassword(): string {
     const salt = bcryptjs.genSaltSync(10)
-
-    console.log(this.password, salt)
-
     return bcryptjs.hashSync(this.password, salt)
 })
 

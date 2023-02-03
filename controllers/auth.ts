@@ -29,7 +29,7 @@ export const generateRefreshToken: Function = (): string =>
  * @param req 
  * @param res 
  */
-export const signIn: RequestHandler = (req: Request, res: Response): void => {
+export const login: RequestHandler = (req: Request, res: Response): void => {
     const { email, password } = req.body
 
     User.findOne({ email }, (err: Error, user: IUserModel) => {
@@ -40,7 +40,7 @@ export const signIn: RequestHandler = (req: Request, res: Response): void => {
         const refreshToken = generateRefreshToken()
 
         tokenList[refreshToken] = user.email
-        res.status(200).json({ success: true, accessToken, refreshToken })
+        res.status(200).json({ success: true, message: `You are logged in successfully.`, accessToken, refreshToken })
     })
 }
 
@@ -49,7 +49,7 @@ export const signIn: RequestHandler = (req: Request, res: Response): void => {
  * @param req 
  * @param res 
  */
-export const signUp: RequestHandler = (req: Request, res: Response): void => {
+export const register: RequestHandler = (req: Request, res: Response): void => {
     const { email } = req.body
 
     User.findOne({ email }, (err: Error, user: IUserModel) => {
@@ -63,7 +63,7 @@ export const signUp: RequestHandler = (req: Request, res: Response): void => {
             const refreshToken = generateRefreshToken()
 
             tokenList[refreshToken] = user.email
-            res.status(200).json({ success: true, accessToken, refreshToken })
+            res.status(200).json({ success: true, message: `You are registered successfully.`, accessToken, refreshToken })
         })
     })
 }

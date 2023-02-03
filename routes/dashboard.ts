@@ -4,6 +4,6 @@ import { verifyAccessToken } from '../middlewares/auth'
 
 const router: express.Router = express.Router()
 
-router.get(`/dashboard`, verifyAccessToken, dashboard.index)
+router.get(`/`, verifyAccessToken, dashboard.index)
 
 export default router

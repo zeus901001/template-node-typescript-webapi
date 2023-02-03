@@ -4,8 +4,8 @@ import { verifyRefreshToken } from '../middlewares/auth'
 
 const router: express.Router = express.Router()
 
-router.post('/signin', auth.signIn)
-router.post('/signup', auth.signUp)
+router.post('/login', auth.login)
+router.post('/register', auth.register)
 router.post('/updateAccessToken', verifyRefreshToken, auth.updateAccessToken)
 router.post('/removeRefreshToken', auth.removeRefreshToken)
 

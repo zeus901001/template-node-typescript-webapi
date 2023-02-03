@@ -4,7 +4,8 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import authRoutes from './routes/auth'
-import apiRoutes from './routes/api'
+import dashboardRoutes from './routes/dashboard'
+import accountRoutes from './routes/account'
 import { SERVER_URI, SERVER_PORT, MONGO_URI, MONGO_PORT, MONGO_NAME } from './config'
 
 const app = express()
@@ -20,8 +21,9 @@ app.use(express.static(path.join(__dirname, './dist')))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.use('/auth', authRoutes)
-app.use('/api', apiRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/dashboard', dashboardRoutes)
+app.use('/api/account', accountRoutes)
 
 /**
  * Start an express app.
