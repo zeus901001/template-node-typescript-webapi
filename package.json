@@ -1,0 +1,46 @@
+{
+  "name": "webapi-typescript",
+  "version": "1.0.0",
+  "description": "Node Web API Server",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon -e ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeus901001/node-server-typescript-template.git"
+  },
+  "keywords": [
+    "http",
+    "webapi",
+    "typescript",
+    "express"
+  ],
+  "author": "zeus901001@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeus901001/node-server-typescript-template/issues"
+  },
+  "homepage": "https://github.com/zeus901001/node-server-typescript-template#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.0",
+    "rand-token": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.16",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
